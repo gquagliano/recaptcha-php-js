@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>recaptcha-php-js</title>
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="formulario" action="enviar.php" method="post">
+            <label>Nombre:</label>
+            <input type="text" name="nombre">
+            <button type="button" onclick="enviarFormulario(this);">Enviar</button>
+        </form>        
+
+        <script src="../recaptcha.min.js"></script>
+        <script>
+        //Esta clave está habilitada solo para localhost y no garantizo su disponibilidad
+        recaptcha.preparar("6LesKt8ZAAAAAO-YpMzTYojmFc7T1pCyPmzjpDx9");
+        function enviarFormulario(btn) {
+            btn.disabled=true;
+            btn.innerText="Un momento...";
+
+            var formulario=document.querySelector("#formulario");
+            recaptcha.enviar(formulario,function(prueba) {
+                if(prueba) formulario.submit();
+            });
+        }
+        </script>
+    </body>
+</html>

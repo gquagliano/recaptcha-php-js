@@ -1,0 +1,5 @@
+[05-Nov-2020 01:45:01 UTC] PHP Warning:  curl_exec() expects parameter 1 to be resource, string given in C:\Gabriel\www\recaptcha-php-js\recaptcha.php on line 21
+[05-Nov-2020 01:45:01 UTC] PHP Stack trace:
+[05-Nov-2020 01:45:01 UTC] PHP   1. {main}() C:\Gabriel\www\recaptcha-php-js\prueba\enviar.php:0
+[05-Nov-2020 01:45:01 UTC] PHP   2. recaptcha::validarFormulario() C:\Gabriel\www\recaptcha-php-js\prueba\enviar.php:5
+[05-Nov-2020 01:45:01 UTC] PHP   3. curl_exec() C:\Gabriel\www\recaptcha-php-js\recaptcha.php:21
