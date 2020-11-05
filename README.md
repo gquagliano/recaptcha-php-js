@@ -23,12 +23,11 @@ Implementar reCAPTCHA es muy fácil, pero, de todos modos es bueno contar con un
         //...Validaciones, etc.
 
         var formulario=document.querySelector("#formulario");
-        //Con jQuery
-        //var formulario=$("#formulario").get(0);
+        //Con jQuery: $("#formulario").get(0)
 
         var promesa=recaptcha.enviar(formulario,function(prueba) {
             if(prueba) {
-                //...Lica del envío del formulario, animación de precarga, AJAX, etc.
+                //...Lógica del envío del formulario, animación de precarga, AJAX, etc.
                 //O simplemente:
                 formulario.submit();
             }
@@ -36,7 +35,7 @@ Implementar reCAPTCHA es muy fácil, pero, de todos modos es bueno contar con un
     }
     </script>
 
-En `recaptcha.preparar()` debe especificarse la clave pública.
+En `recaptcha.preparar()` debe especificarse la clave pública o clave del sitio web.
 
 `recaptcha.enviar()` recibe como primer argumento el selector o el elemento (`Element` o `Node`; *no* jQuery). Admite una función de retorno (*callback*) como segundo argumento, pero también devuelve una promesa (`Promise`); puede implementarse de cualquiera de las dos formas.
 
@@ -49,11 +48,11 @@ Para enviar el valor mediante AJAX en lugar de utilizar el campo oculto, debe en
     include_once(__DIR__.'/recaptcha-php-js/recaptcha.php');
 
     if(!\recaptcha::validarFormulario('clave privada o secreta')) {
-        //...Lógica del mensaje de error, devolver el mensaje, redireccionamiento, etc.
+        //...Lógica en caso de error, devolver un mensaje, redireccionamiento, etc.
         exit;
     }
 
-En `recaptcha::validarFormulario()` debe especificarse la clave privada.
+En `recaptcha::validarFormulario()` debe especificarse la clave privada o secreta.
 
 ### Obtener las claves
 
