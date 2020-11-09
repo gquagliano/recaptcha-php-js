@@ -18,6 +18,8 @@ class recaptcha {
             'response'=>filter_var($_REQUEST[self::nombreCampo],FILTER_UNSAFE_RAW)
         ]);
 
+        unset($_REQUEST[self::nombreCampo],$_POST[self::nombreCampo],$_GET[self::nombreCampo]);
+
         $obj=json_decode($resultado);
 		if(!$obj||!$obj->success) return false;
 		return true;
