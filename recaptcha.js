@@ -60,7 +60,7 @@ var recaptcha=new function() {
         if(typeof formulario==="string") formulario=document.querySelector(formulario);
         if(typeof retorno!=="function") retorno=null;
 
-        var campo=formulario.querySelector("input[name='token_recaptcha']");
+        var campo=formulario.querySelector("input[name='prueba_recaptcha']");
         if(!campo) {
             campo=document.createElement("input");
             campo.type="hidden";
